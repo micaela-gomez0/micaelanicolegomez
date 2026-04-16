@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: linear-gradient(to right, #ffe4ec, #fff0f5);
+    overflow-x: hidden;
+}
+
+/* BUBBLES BACKGROUND */
+.bubbles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.bubbles span {
+    position: absolute;
+    bottom: -60px;
+    width: 30px;
+    height: 30px;
+    background: rgba(255,182,193,0.3);
+    border-radius: 50%;
+    animation: rise 20s linear infinite;
+}
+
+/* RANDOM POSITIONS */
+.bubbles span:nth-child(1){ left:10%; animation-duration: 15s; }
+.bubbles span:nth-child(2){ left:25%; animation-duration: 18s; }
+.bubbles span:nth-child(3){ left:40%; animation-duration: 12s; }
+.bubbles span:nth-child(4){ left:60%; animation-duration: 20s; }
+.bubbles span:nth-child(5){ left:80%; animation-duration: 16s; }
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    background: #ffb6c1;
+    color: white;
+    padding: 20px;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #ffc0cb;
+    padding: 10px;
+}
+
+nav a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px;
+    text-align: center;
+}
+
+/* PROFILE PIC FIXED */
+.profile {
+    width: 140px; /* FIXED SIZE */
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ffb6c1;
+    margin-bottom: 15px;
+}
+
+/* TEXT */
+.intro {
+    max-width: 650px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+/* CARD CONTAINER */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+/* CARDS (GLASS EFFECT) */
+.card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+    width: 280px;
+    min-height: 220px;
+    padding: 20px;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* SPECIAL CENTER */
+.special {
+    max-width: 500px;
+    width: 100%;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ff6f91;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff4f7a;
+}
+
+/* FOOTER */
+footer {
+    background: #ffb6c1;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+}
